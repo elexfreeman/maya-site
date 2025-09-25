@@ -29,7 +29,7 @@
 </template>
 
 <script setup lang="ts">
-type Product = {
+type Service = {
   id: number;
   caption: string;
   description: string;
@@ -38,7 +38,7 @@ type Product = {
 	img: string;
 }
 
-const placeholder: Product[] = [
+const placeholder: Service[] = [
   {
     id: 1,
     caption: 'Ботанические иллюстрации',
@@ -65,6 +65,6 @@ const placeholder: Product[] = [
   }
 ]
 
-const { data, error } = await useFetch<{ items: Product[] }>('/api/products')
-const items = computed<Product[]>(() => data.value?.items?.length ? data.value.items : placeholder)
+const { data, error } = await useFetch<{ items: Service[] }>('/api/services')
+const items = computed<Service[]>(() => data.value?.items?.length ? data.value.items : placeholder)
 </script>
