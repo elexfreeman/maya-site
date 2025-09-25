@@ -6,53 +6,20 @@
         <div class="section-divider"></div>
       </div>
       <div class="services-grid">
-        <div class="service-card">
+        <div v-for="item in items" :key="item.id" class="service-card">
           <div class="service-image">
-            <div class="placeholder-image service-placeholder" style="background-image: url(/img/IMG_8886.jpg)">
-              <span>Ботанические иллюстрации</span>
+            <div
+              class="placeholder-image service-placeholder"
+              :style="{ backgroundImage: `url(${item.img || '/img/IMG_8886.jpg'})` }"
+            >
+              <span>{{ item.caption }}</span>
             </div>
           </div>
           <div class="service-content">
-            <h3>Ботанические иллюстрации</h3>
-            <p>Цветы, травы и веточки в акварели. Лёгкие композиции для интерьера и подарков.</p>
+            <h3>{{ item.caption }}</h3>
+            <p>{{ item.description }}</p>
             <div class="service-benefits">
-              <span>• Оригиналы и принты</span>
-              <span>• Натуральные оттенки</span>
-              <span>• Индивидуальные сюжеты</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="service-card">
-          <div class="service-image">
-            <div class="placeholder-image service-placeholder" style="background-image: url(/img/IMG_8886.jpg)">
-              <span>Пейзажи</span>
-            </div>
-          </div>
-          <div class="service-content">
-            <h3>Пейзажи</h3>
-            <p>Спокойные акварельные виды: море, горы, закаты. Лёгкая цветовая гамма для домашнего уюта.</p>
-            <div class="service-benefits">
-              <span>• Бумага 100% хлопок</span>
-              <span>• Паспарту по желанию</span>
-              <span>• Доставка по всей России</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="service-card">
-          <div class="service-image">
-            <div class="placeholder-image service-placeholder" style="background-image: url(/img/IMG_8886.jpg)">
-              <span>Принты и открытки</span>
-            </div>
-          </div>
-          <div class="service-content">
-            <h3>Принты и открытки</h3>
-            <p>Печать моих работ на плотной дизайнерской бумаге. Небольшие форматы — для приятных поводов.</p>
-            <div class="service-benefits">
-              <span>• Качественная печать</span>
-              <span>• Подарочная упаковка</span>
-              <span>• Доступные цены</span>
+              <span v-for="(tag, i) in (item.tagsList || [])" :key="i">• {{ tag }}</span>
             </div>
           </div>
         </div>
@@ -60,3 +27,44 @@
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+type Product = {
+  id: number;
+  caption: string;
+  description: string;
+  tags: string | null;
+  tagsList: string[];
+	img: string;
+}
+
+const placeholder: Product[] = [
+  {
+    id: 1,
+    caption: 'Ботанические иллюстрации',
+    description: 'Цветы, травы и веточки в акварели. Лёгкие композиции для интерьера и подарков.',
+    img: '/img/IMG_8886.jpg',
+    tags: 'Оригиналы и принты, Натуральные оттенки, Индивидуальные сюжеты',
+    tagsList: ['Оригиналы и принты', 'Натуральные оттенки', 'Индивидуальные сюжеты']
+  },
+  {
+    id: 2,
+    caption: 'Пейзажи',
+    description: 'Спокойные акварельные виды: море, горы, закаты. Лёгкая цветовая гамма для домашнего уюта.',
+    img: '/img/IMG_8886.jpg',
+    tags: 'Бумага 100% хлопок, Паспарту по желанию, Доставка по всей России',
+    tagsList: ['Бумага 100% хлопок', 'Паспарту по желанию', 'Доставка по всей России']
+  },
+  {
+    id: 3,
+    caption: 'Принты и открытки',
+    description: 'Печать моих работ на плотной дизайнерской бумаге. Небольшие форматы — для приятных поводов.',
+    img: '/img/IMG_8886.jpg',
+    tags: 'Качественная печать, Подарочная упаковка, Доступные цены',
+    tagsList: ['Качественная печать', 'Подарочная упаковка', 'Доступные цены']
+  }
+]
+
+const { data, error } = await useFetch<{ items: Product[] }>('/api/products')
+const items = computed<Product[]>(() => data.value?.items?.length ? data.value.items : placeholder)
+</script>

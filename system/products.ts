@@ -10,11 +10,12 @@ export type ProductRow = RowDataPacket & {
 }
 
 export type Product = {
-  id: number
-  caption: string
-  description: string
-  tags: string | null
-  tagsList: string[]
+	id: number;
+	caption: string;
+	description: string;
+	img: string;
+	tags: string | null;
+	tagsList: string[];
 }
 
 function escapeRegExp(s: string) {
