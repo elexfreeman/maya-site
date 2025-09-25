@@ -2,7 +2,7 @@
   <section id="about" class="about">
     <div class="container">
       <div class="section-header">
-        <h2>О художнице</h2>
+        <h2>Обо мне</h2>
         <div class="section-divider"></div>
       </div>
       <div class="about-content">
@@ -14,7 +14,7 @@
             очень нежными.
           </p>
           <p>
-            Пишу оригиналы в наличии и принимаю индивидуальные заказы. Бережно упаковываю и отправляю по Казахстану
+            Пишу оригиналы в наличии и принимаю индивидуальные заказы. Бережно упаковываю и отправляю по всей России
             и за пределы страны. С радостью помогу подобрать картину под интерьер или сделать тёплый подарок.
           </p>
           <div class="credentials">
@@ -28,10 +28,9 @@
           </div>
         </div>
         <div class="about-image">
-          <img src="/img/IMG_0843_m.jpg" alt="Акварельная работа на бумаге" class="about-photo" />
+          <img src="/img/IMG_8886.jpg" alt="Акварельная работа на бумаге" class="about-photo" />
         </div>
       </div>
     </div>
   </section>
 </template>
-

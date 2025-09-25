@@ -8,24 +8,7 @@
       <div class="services-grid">
         <div class="service-card">
           <div class="service-image">
-            <div class="placeholder-image service-placeholder" style="background-image: url(/img/photo_2025-01-25_00-17-56.jpg)">
-              <span>Портрет на заказ</span>
-            </div>
-          </div>
-          <div class="service-content">
-            <h3>Портрет на заказ</h3>
-            <p>Акварельные портреты по фото или с натуры. Подберу формат, бумагу и оформлю под стекло по желанию.</p>
-            <div class="service-benefits">
-              <span>• Форматы A4–A2</span>
-              <span>• Срок 5–10 дней</span>
-              <span>• Упаковка в подарок</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="service-card">
-          <div class="service-image">
-            <div class="placeholder-image service-placeholder" style="background-image: url(/img/IMG_0807_m.jpg)">
+            <div class="placeholder-image service-placeholder" style="background-image: url(/img/IMG_8886.jpg)">
               <span>Ботанические иллюстрации</span>
             </div>
           </div>
@@ -42,7 +25,7 @@
 
         <div class="service-card">
           <div class="service-image">
-            <div class="placeholder-image service-placeholder" style="background-image: url(/img/photo_2025-04-28_15-09-56.jpg)">
+            <div class="placeholder-image service-placeholder" style="background-image: url(/img/IMG_8886.jpg)">
               <span>Пейзажи</span>
             </div>
           </div>
@@ -52,14 +35,14 @@
             <div class="service-benefits">
               <span>• Бумага 100% хлопок</span>
               <span>• Паспарту по желанию</span>
-              <span>• Доставка по РК</span>
+              <span>• Доставка по всей России</span>
             </div>
           </div>
         </div>
 
         <div class="service-card">
           <div class="service-image">
-            <div class="placeholder-image service-placeholder" style="background-image: url(/img/IMG_0810_m.jpg)">
+            <div class="placeholder-image service-placeholder" style="background-image: url(/img/IMG_8886.jpg)">
               <span>Принты и открытки</span>
             </div>
           </div>
@@ -77,4 +60,3 @@
     </div>
   </section>
 </template>
-
