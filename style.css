@@ -37,6 +37,10 @@ body {
     --shadow: rgba(196, 133, 138, 0.15);
 }
 
+a {
+	text-decoration: none;
+}
+
 /* Navigation */
 .navbar {
     position: fixed;
@@ -122,6 +126,9 @@ body {
     align-items: center;
     background: linear-gradient(135deg, var(--blush) 0%, var(--soft-pink) 100%);
     padding: 100px 0 50px;
+    background-image: url('img/bg_01.jpg');
+		background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .hero-container {

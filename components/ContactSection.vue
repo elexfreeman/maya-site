@@ -4,7 +4,7 @@
       <div class="section-header">
         <h2>Контакты</h2>
         <div class="section-divider"></div>
-        <p>Готовы начать своё путешествие к исцелению?<br />Свяжитесь со мной, чтобы записаться на сеанс</p>
+        <p>Хотите авторскую картину для дома или в подарок?<br />Напишите в WhatsApp — помогу подобрать под ваш интерьер.</p>
       </div>
       <div class="contact-content">
         <div class="contact-info">
@@ -19,21 +19,20 @@
             <p>
               Пн - Пт: 9:00 - 19:00<br />
               Сб: 10:00 - 17:00<br />
-              Вс: По записи
+              Вс: Творческий день
             </p>
           </div>
         </div>
         <div class="contact-form">
-          <h3>Связаться в WhatsApp</h3>
+          <h3>Купить картину</h3>
           <div class="placeholder-image contact-placeholder" style="background-image: url(/img/IMG_8886.jpg)">
-            <span>Свяжитесь со мной в WhatsApp</span>
+            <span>Напишите в WhatsApp — пришлю каталог и цены</span>
           </div>
           <div class="contact-actions">
-            <a class="cta-button whatsapp-button" href="https://wa.me/" target="_blank" rel="noopener noreferrer">Написать в WhatsApp</a>
+            <a class="cta-button whatsapp-button" href="https://wa.me/" target="_blank" rel="noopener noreferrer">Купить в WhatsApp</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 </template>
-

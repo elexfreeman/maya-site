@@ -28,7 +28,7 @@
           </div>
         </div>
         <div class="about-image">
-          <img src="/img/IMG_8886.jpg" alt="Акварельная работа на бумаге" class="about-photo" />
+          <img src="/img/about_me.jpg" alt="Акварельная работа на бумаге" class="about-photo" />
         </div>
       </div>
     </div>

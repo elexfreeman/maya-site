@@ -7,6 +7,7 @@ export type ProductRow = RowDataPacket & {
   description: string
   img: string
   tags: string | null
+  uri: string
 }
 
 export type Product = {
@@ -16,6 +17,7 @@ export type Product = {
 	img: string;
 	tags: string | null;
 	tagsList: string[];
+  uri: string;
 }
 
 function escapeRegExp(s: string) {
@@ -39,23 +41,32 @@ function mapRow(row: ProductRow): Product {
     description: row.description,
     img: row.img,
     tags: row.tags,
-    tagsList: parseTags(row.tags)
+    tagsList: parseTags(row.tags),
+    uri: row.uri
   }
 }
 
 export async function getAllProducts(): Promise<Product[]> {
   const rows = await query<ProductRow[]>(
-    'SELECT id, caption, description, tags, img FROM products ORDER BY id DESC'
+    'SELECT id, caption, description, tags, img, uri FROM products ORDER BY id DESC'
   )
   return rows.map(mapRow)
 }
 
 export async function getProductById(id: number): Promise<Product | null> {
   const rows = await query<ProductRow[]>(
-    'SELECT id, caption, description, tags, img FROM products WHERE id = ? LIMIT 1',
+    'SELECT id, caption, description, tags, img, uri FROM products WHERE id = ? LIMIT 1',
     [id]
   )
   if (!rows || rows.length === 0) return null
   return mapRow(rows[0] as ProductRow)
 }
 
+export async function getProductByUri(uri: string): Promise<Product | null> {
+  const rows = await query<ProductRow[]>(
+    'SELECT id, caption, description, tags, img, uri FROM products WHERE uri = ? LIMIT 1',
+    [uri]
+  )
+  if (!rows || rows.length === 0) return null
+  return mapRow(rows[0] as ProductRow)
+}
