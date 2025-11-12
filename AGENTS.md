@@ -1,40 +1,49 @@
-# Repository Guidelines
+# Руководство по репозиторию
 
-## Project Structure & Module Organization
-- Root files: `index.html` (markup) and `style.css` (styles).
-- Static site: no build system or runtime dependencies.
-- Add assets under `assets/` (e.g., `assets/images/`, `assets/fonts/`) if needed. Reference with relative paths in HTML/CSS.
+## Структура проекта и модули
+- `pages/`: маршруты Nuxt 3 (`index.vue`, `product/[uri].vue`).
+- `components/`: переиспользуемые Vue‑компоненты (например, `NavBar.vue`, секции).
+- `server/api/`: API‑роуты (например, `products.get.ts`, `products/[id].get.ts`).
+- `system/`: слой доступа к БД (`mysql.ts`) и доменные модули (`products.ts`, `services.ts`).
+- `public/` и `img/`: статические ресурсы. Глобальные стили — `style.css`.
+- `nuxt.config.ts`: конфигурация приложения. Переменные окружения — `.env` (см. `.env.example`).
 
-## Build, Test, and Development Commands
-- Run locally (simple HTTP server):
-  - Python: `python3 -m http.server 8000` (serve from repo root, open http://localhost:8000).
-  - Node (optional): `npx serve .` (if you prefer Node tooling).
-- Quick view without server: open `index.html` directly in a browser (note: some features like font loading still work; absolute URLs only).
+## Сборка, тесты и разработка
+- `npm run dev`: запуск dev‑сервера `http://localhost:3000`.
+- `npm run build`: продакшен‑сборка.
+- `npm run preview`: локальный предпросмотр продакшен‑сборки.
+- `npm run generate`: генерация статического вывода (SSG).
+- Быстрые проверки API: `curl http://localhost:3000/api/db-ping`, `curl http://localhost:3000/api/products`.
 
-## Coding Style & Naming Conventions
-- HTML: semantic elements (`header`, `nav`, `section`, `footer`); 2–4 spaces indentation (match surrounding code; current files use 4).
-- CSS: kebab-case class names (e.g., `.service-card`), group related rules, and keep selectors shallow.
-- Variables: define theme colors in `:root` and reuse via `var(--token)`; prefer extending existing tokens over adding new ones.
-- Responsiveness: update media queries near the end of `style.css`; test at 320px, 768px, and 1200px widths.
-- Avoid inline styles and embedded `<style>` blocks; keep all styling in `style.css`.
+## Стиль кода и именование
+- Язык: TypeScript + Vue 3 SFC с `<script setup lang="ts">`.
+- Отступы: 2 пробела; держите строки краткими; в TS предпочтительны одинарные кавычки.
+- Компоненты: PascalCase (`SiteFooter.vue`).
+- Страницы: файловые маршруты (`product/[uri].vue`).
+- API: файловые маршруты с HTTP‑суффиксами (`*.get.ts`).
+- Форматирование/линтинг: линтер не настроен; придерживайтесь существующего стиля кода.
 
-## Testing Guidelines
-- No unit tests in this repo. Validate by:
-  - Visual checks across breakpoints and dark-on-light contrast.
-  - Accessibility pass (keyboard nav, focus states, `alt` text).
-  - Performance: compress images (WebP/AVIF) under `assets/images/` and use appropriate sizes.
-  - Optional: run Lighthouse in Chrome DevTools for a quick audit.
+## Тестирование
+- Формальных тестов пока нет. Проверяйте через curl/браузер:
+  - `/api/db-ping`, `/api/products`, `/api/products/by-uri/<slug>`.
+- При добавлении тестов используйте Vitest для утилит в `system/` и Vue Test Utils для компонентов.
+- Фикстуры — минимальные и обезличенные; секреты не коммитьте.
 
-## Commit & Pull Request Guidelines
-- Commits: concise and scoped; prefer Conventional Commits where useful:
-  - `feat: add gallery grid hover effects`
-  - `fix: correct navbar shadow on scroll`
-  - `style: normalize indentation in style.css`
-- Pull Requests should include:
-  - Purpose and summary of changes, with before/after screenshots for UI changes.
-  - Any trade-offs or follow-ups.
-  - Testing notes (browsers/devices checked).
+## Коммиты и Pull Request
+- Язык коммитов: сообщения коммитов пишите на русском языке.
+- Коммиты: используй правила описания комитов из info/git_commit_rules.md
+- Подробно описывай изменения и что затронуто в проекте
 
-## Security & Configuration Tips
-- Do not commit secrets. If integrating analytics or forms, keep keys out of the repo and load via environment-specific injection.
-- Use HTTPS links for external assets (e.g., Google Fonts) and verify CORS when adding third-party resources.
+## Безопасность и конфигурация
+- MySQL настраивается через `.env`: отдельные переменные или `MYSQL_URI` (см. `.env.example`).
+- Полезные опции: `MYSQL_POOL_LIMIT`, `MYSQL_SSL`, `TAGS_DELIM` (парсинг в `products.ts`/`services.ts`).
+- Не коммитьте реальные `.env` и учетные данные.
+
+
+## Журналы агента (сессии)
+- Логируйте каждую сессию взаимодействия в `agent_log.md`;
+- Подтверждение пользователя на запись в `agent_log.md` не требуется.
+- Используйте таблицу Markdown со столбцами: `date-time | developer request | actions taken | files touched`.
+- Заголовок таблицы:
+  `| date-time | developer request | actions taken | files touched |` перевод строки
+  `| --- | --- | --- | --- |`
