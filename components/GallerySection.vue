@@ -13,7 +13,7 @@
           class="gallery-item"
           :to="`/product/${p.uri}`"
         >
-          <div class="placeholder-image gallery-placeholder" :style="{ backgroundImage: `url(${p.img})` }"></div>
+          <div class="placeholder-image gallery-placeholder" :style="{ backgroundImage: `url('${p.img}')` }"></div>
           <div class="service-content">
             <h3>{{ p.caption }}</h3>
             <p>{{ p.description }}</p>

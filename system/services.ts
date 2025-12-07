@@ -45,7 +45,7 @@ function mapRow(row: ServiceRow): Service {
 
 export async function getAllServices(): Promise<Service[]> {
   const rows = await query<ServiceRow[]>(
-    'SELECT id, caption, description, tags, img FROM services ORDER BY id DESC'
+    'SELECT id, caption, description, tags, img FROM services ORDER BY id ASC'
   )
   return rows.map(mapRow)
 }

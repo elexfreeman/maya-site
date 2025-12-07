@@ -458,6 +458,10 @@ section {
     margin-bottom: 20px;
 }
 
+.card-icon img {
+    width: 100px;
+}
+
 .approach-card h3 {
     font-size: 1.5rem;
     color: var(--deep-rose);
@@ -480,7 +484,7 @@ section {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 40px;
 }
 
@@ -756,6 +760,11 @@ section {
 }
 
 /* Responsive Design */
+/* Tablet breakpoint: 2 columns */
+@media (max-width: 1024px) {
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
 @media (max-width: 768px) {
     .nav-menu {
         display: none;

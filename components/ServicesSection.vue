@@ -43,7 +43,7 @@ const placeholder: Service[] = [
     id: 1,
     caption: 'Ботанические иллюстрации',
     description: 'Цветы, травы и веточки в акварели. Лёгкие композиции для интерьера и подарков.',
-    img: '/img/IMG_8886.jpg',
+    img: '/services/botanic.jpg',
     tags: 'Оригиналы и принты, Натуральные оттенки, Индивидуальные сюжеты',
     tagsList: ['Оригиналы и принты', 'Натуральные оттенки', 'Индивидуальные сюжеты']
   },
@@ -62,9 +62,30 @@ const placeholder: Service[] = [
     img: '/img/IMG_8886.jpg',
     tags: 'Качественная печать, Подарочная упаковка, Доступные цены',
     tagsList: ['Качественная печать', 'Подарочная упаковка', 'Доступные цены']
+  },
+  {
+    id: 4,
+    caption: 'Пастель',
+    description: 'Тёплые и мягкие пастельные работы: портреты, натюрморты и уютные сюжеты для интерьера.',
+    img: '/img/IMG_8886.jpg',
+    tags: 'Нежные оттенки, Эффект мягкости, Индивидуальные заказы',
+    tagsList: ['Нежные оттенки', 'Эффект мягкости', 'Индивидуальные заказы']
   }
 ]
 
 const { data, error } = await useFetch<{ items: Service[] }>('/api/services')
-const items = computed<Service[]>(() => data.value?.items?.length ? data.value.items : placeholder)
+const pastel: Service = {
+  id: 9999,
+  caption: 'Пастель',
+  description: 'Тёплые и мягкие пастельные работы: портреты, натюрморты и уютные сюжеты для интерьера.',
+  img: '/img/IMG_8886.jpg',
+  tags: 'Нежные оттенки, Эффект мягкости, Индивидуальные заказы',
+  tagsList: ['Нежные оттенки', 'Эффект мягкости', 'Индивидуальные заказы']
+}
+
+const items = computed<Service[]>(() => {
+  const base = (data.value?.items?.length ? data.value.items : placeholder) as Service[]
+  const hasPastel = base.some(i => i.caption && i.caption.toLowerCase() === 'пастель')
+  return hasPastel ? base : [...base, pastel]
+})
 </script>

@@ -70,3 +70,50 @@ export async function getProductByUri(uri: string): Promise<Product | null> {
   if (!rows || rows.length === 0) return null
   return mapRow(rows[0] as ProductRow)
 }
+
+export type NewProduct = {
+  caption: string
+  description: string
+  tags: string | null
+  img: string
+  uri: string
+}
+
+export async function findProductIdByUriOrImg(uri: string, img: string): Promise<number | null> {
+  const rows = await query<RowDataPacket[]>(
+    'SELECT id FROM products WHERE uri = ? OR img = ? LIMIT 1',
+    [uri, img]
+  )
+  if (!rows || rows.length === 0) return null
+  // @ts-ignore
+  return Number(rows[0].id)
+}
+
+export async function findProductIdByUriOnly(uri: string): Promise<number | null> {
+  const rows = await query<RowDataPacket[]>(
+    'SELECT id FROM products WHERE uri = ? LIMIT 1',
+    [uri]
+  )
+  if (!rows || rows.length === 0) return null
+  // @ts-ignore
+  return Number(rows[0].id)
+}
+
+export async function findProductIdByImgOnly(img: string): Promise<number | null> {
+  const rows = await query<RowDataPacket[]>(
+    'SELECT id FROM products WHERE img = ? LIMIT 1',
+    [img]
+  )
+  if (!rows || rows.length === 0) return null
+  // @ts-ignore
+  return Number(rows[0].id)
+}
+
+export async function insertProduct(p: NewProduct): Promise<number> {
+  const rows = await query<any>(
+    'INSERT INTO products (caption, description, tags, img, uri) VALUES (?, ?, ?, ?, ?)',
+    [p.caption, p.description, p.tags, p.img, p.uri]
+  )
+  // mysql2 returns OkPacket with insertId
+  return Number((rows as any).insertId || 0)
+}

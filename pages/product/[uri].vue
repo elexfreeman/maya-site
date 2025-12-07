@@ -9,7 +9,7 @@
           <p>{{ data.description }}</p>
         </div>
         <div class="product-layout">
-          <div class="product-media" :style="{ backgroundImage: `url(${data.img})` }" role="img" :aria-label="data.caption"></div>
+          <div class="product-media" :style="{ backgroundImage: `url('${data.img}')` }" role="img" :aria-label="data.caption"></div>
           <div class="product-meta">
             <div class="service-benefits" v-if="data.tagsList?.length">
               <span v-for="t in data.tagsList" :key="t">• {{ t }}</span>
