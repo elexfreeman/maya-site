@@ -1,0 +1,6 @@
+| date-time | developer request | actions taken | files touched |
+| --- | --- | --- | --- |
+| 2025-12-07 12:09:01 UTC | использовать на сайте шрифт Bad Script из Google Fonts | Добавил ссылки Google Fonts в `app.head` Nuxt, обновил глобальные стили для применения шрифта по всему сайту | nuxt.config.ts, style.css |
+| 2025-12-07 12:13:36 UTC | myway gallery сделай подложку как в hero | Добавил фон с изображением как в hero для секций `.myway` и `.gallery` (cover, no-repeat, center) | style.css |
+| 2025-12-07 12:20:03 UTC | для сеций about services contact сделай подложку public/img/bg_02.jpg | Добавил подложку `/img/bg_02.jpg` из `public/` для `.about`, `.services`, `.contact` (cover, no-repeat, center) | style.css |
+| 2025-12-07 12:23:19 UTC | Для всех заголовков оставить Bad Script, остальному тексту — Lato | Подключил Lato в `app.head`, установил `body` = Lato, задал `h1–h6` = Bad Script | nuxt.config.ts, style.css |

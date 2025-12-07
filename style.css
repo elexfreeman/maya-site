@@ -1,3 +1,6 @@
+/* Google Font: Bad Script */
+/* Loaded via nuxt.config.ts <head> links */
+
 /* Reset and Base Styles */
 * {
     margin: 0;
@@ -10,10 +13,15 @@ html {
 }
 
 body {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
     color: #4a4a4a;
     overflow-x: hidden;
+}
+
+/* Headings use Bad Script */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Bad Script', cursive;
 }
 
 .container {
@@ -70,7 +78,6 @@ a {
 }
 
 .logo h2 {
-    font-family: 'Playfair Display', serif;
     font-size: 2rem;
     font-weight: 600;
     color: var(--deep-rose);
@@ -156,7 +163,6 @@ a {
 }
 
 .hero h1 {
-    font-family: 'Playfair Display', serif;
     font-size: 3.5rem;
     font-weight: 300;
     color: var(--deep-rose);
@@ -284,7 +290,7 @@ a {
 /* About photo */
 .about-photo {
     width: 100%;
-    height: 500px;
+    height: 570px;
     object-fit: cover;
     border-radius: 15px;
     display: block;
@@ -330,7 +336,6 @@ section {
 }
 
 .section-header h2 {
-    font-family: 'Playfair Display', serif;
     font-size: 2.5rem;
     color: var(--deep-rose);
     margin-bottom: 15px;
@@ -355,6 +360,9 @@ section {
 /* About Section */
 .about {
     background: var(--white);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .about-content {
@@ -365,7 +373,6 @@ section {
 }
 
 .about-text h3 {
-    font-family: 'Playfair Display', serif;
     font-size: 2rem;
     color: var(--deep-rose);
     margin-bottom: 25px;
@@ -420,6 +427,10 @@ section {
 /* My Way Section */
 .myway {
     background: linear-gradient(135deg, var(--soft-pink) 0%, var(--blush) 100%);
+    background-image: url('img/bg_01.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .approach-cards {
@@ -448,7 +459,6 @@ section {
 }
 
 .approach-card h3 {
-    font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
     color: var(--deep-rose);
     margin-bottom: 15px;
@@ -463,6 +473,9 @@ section {
 /* Services Section */
 .services {
     background: var(--white);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .services-grid {
@@ -501,7 +514,6 @@ section {
 }
 
 .service-content h3 {
-    font-family: 'Playfair Display', serif;
     font-size: 1.4rem;
     color: var(--deep-rose);
     margin-bottom: 15px;
@@ -532,6 +544,10 @@ section {
 /* Gallery Section */
 .gallery {
     background: linear-gradient(135deg, var(--blush) 0%, var(--primary-pink) 100%);
+    background-image: url('img/bg_01.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .gallery-grid {
@@ -553,13 +569,16 @@ section {
 
 .gallery-placeholder {
     width: 100%;
-    height: 500px;
+    height: 330px;
     border-radius: 0;
 }
 
 /* Contact Section */
 .contact {
     background: var(--white);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .contact-content {
@@ -596,7 +615,6 @@ section {
 }
 
 .contact-card h3 {
-    font-family: 'Playfair Display', serif;
     color: var(--deep-rose);
     margin-bottom: 10px;
     font-size: 1.3rem;
@@ -636,7 +654,6 @@ section {
 }
 
 .contact-form h3 {
-    font-family: 'Playfair Display', serif;
     color: var(--deep-rose);
     margin-bottom: 30px;
     font-size: 1.8rem;
@@ -654,7 +671,6 @@ section {
     padding: 15px;
     border: 2px solid var(--soft-pink);
     border-radius: 10px;
-    font-family: 'Lato', sans-serif;
     font-size: 1rem;
     background: var(--white);
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
@@ -706,7 +722,6 @@ section {
 }
 
 .footer-logo h3 {
-    font-family: 'Playfair Display', serif;
     font-size: 1.8rem;
     margin-bottom: 5px;
 }

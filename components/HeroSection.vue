@@ -2,7 +2,7 @@
   <section class="hero">
     <div class="hero-container">
       <div class="hero-content">
-        <h1>Акварельные картины с душой</h1>
+        <h1>Акварель с душой</h1>
         <p>Нежные оттенки, живые фактуры и свет в каждом взмахе кистью. Оригиналы, принты и заказы.</p>
         <a href="#gallery" class="cta-button">Смотреть картины</a>
       </div>
