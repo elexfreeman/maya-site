@@ -882,6 +882,7 @@ section {
 .gallery-item,
 .contact-card {
     animation: fadeIn 0.6s ease-out;
+    background: #fdf5f5;
 }
 
 /* Custom scrollbar */
