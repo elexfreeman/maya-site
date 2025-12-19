@@ -1,7 +1,8 @@
 <template>
   <section class="hero">
-    <div class="hero-container">
-      <div class="hero-content">
+    <div class="container">
+    <div class="about-content">
+       <div class="hero-content">
         <h1>Акварель с душой</h1>
         <p>Нежные оттенки, живые фактуры и свет в каждом взмахе кистью. Оригиналы, принты и заказы.</p>
         <a href="#gallery" class="cta-button">Смотреть картины</a>
@@ -48,6 +49,9 @@
           </div>
         </div>
       </div>
+    </div>
+    
+   
     </div>
   </section>
 </template>

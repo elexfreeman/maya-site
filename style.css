@@ -144,9 +144,6 @@ a {
     align-items: center;
     justify-content: center;
     gap: 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
 }
 
 .hero-container .hero-content {
@@ -902,4 +899,20 @@ section {
 
 ::-webkit-scrollbar-thumb:hover {
     background: var(--mauve);
+}
+
+.no-wrap {
+    white-space: nowrap;
+}
+
+.contact-icon-img {
+    width: 70px;
+}
+
+.contact-info a {
+    color: var(--deep-rose);
+}
+
+.approach-card {
+    background-color: #fff;
 }

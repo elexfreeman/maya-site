@@ -8,17 +8,21 @@
       </div>
         <div class="contact-info">
           <div class="contact-card">
-            <div class="contact-icon">📞</div>
-            <h3>Телефон</h3>
-            <p>+7 000 000 0000</p>
+            <div class="contact-icon">
+              <img class="contact-icon-img" src="/icons/icon-phone.jpg" />
+            </div>
+            <h3>Как связаться со мной</h3>
+            <p>+7 999 158 8405</p>
+            <p>Телеграм: <a href="https://t.me/angeludachi_bot" target="_blank">@angeludachi_bot</a></p>
           </div>
           <div class="contact-card">
-            <div class="contact-icon">🕒</div>
+            <div class="contact-icon">
+              <img class="contact-icon-img" src="/icons/icon-work.jpg" />
+            </div>
             <h3>Часы работы</h3>
             <p>
               Пн - Пт: 9:00 - 19:00<br />
-              Сб: 10:00 - 17:00<br />
-              Вс: Творческий день
+              Сб, Вс: Творческий день
             </p>
           </div>
         </div>
