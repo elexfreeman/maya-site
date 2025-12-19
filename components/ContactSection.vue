@@ -4,7 +4,7 @@
       <div class="section-header">
         <h2>Контакты</h2>
         <div class="section-divider"></div>
-        <p>Хотите авторскую картину для дома или в подарок?<br />Напишите в WhatsApp — помогу подобрать под ваш интерьер.</p>
+        <p>Хотите авторскую картину для дома или в подарок?<br />Напишите в Telegram — помогу подобрать под ваш интерьер.</p>
       </div>
       <div class="contact-content">
         <div class="contact-info">
@@ -26,10 +26,10 @@
         <div class="contact-form">
           <h3>Купить картину</h3>
           <div class="placeholder-image contact-placeholder" style="background-image: url(/img/IMG_8886.jpg)">
-            <span>Напишите в WhatsApp — пришлю каталог и цены</span>
+            <span>Напишите в Telegram — пришлю каталог и цены</span>
           </div>
           <div class="contact-actions">
-            <a class="cta-button whatsapp-button" href="https://wa.me/" target="_blank" rel="noopener noreferrer">Купить в WhatsApp</a>
+            <a class="cta-button Telegram-button" href="https://t.me/angeludachi_bot" target="_blank" rel="noopener noreferrer">Купить в Telegram</a>
           </div>
         </div>
       </div>
