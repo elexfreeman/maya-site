@@ -1,3 +1,6 @@
+/* Google Font: Bad Script */
+/* Loaded via nuxt.config.ts <head> links */
+
 /* Reset and Base Styles */
 * {
     margin: 0;
@@ -10,10 +13,15 @@ html {
 }
 
 body {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
     color: #4a4a4a;
     overflow-x: hidden;
+}
+
+/* Headings use Bad Script */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Bad Script', cursive;
 }
 
 .container {
@@ -35,6 +43,10 @@ body {
     --text-light: #6b6b6b;
     --white: #ffffff;
     --shadow: rgba(196, 133, 138, 0.15);
+}
+
+a {
+	text-decoration: none;
 }
 
 /* Navigation */
@@ -66,7 +78,6 @@ body {
 }
 
 .logo h2 {
-    font-family: 'Playfair Display', serif;
     font-size: 2rem;
     font-weight: 600;
     color: var(--deep-rose);
@@ -122,6 +133,9 @@ body {
     align-items: center;
     background: linear-gradient(135deg, var(--blush) 0%, var(--soft-pink) 100%);
     padding: 100px 0 50px;
+    background-image: url('img/bg_01.jpg');
+		background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .hero-container {
@@ -149,7 +163,6 @@ body {
 }
 
 .hero h1 {
-    font-family: 'Playfair Display', serif;
     font-size: 3.5rem;
     font-weight: 300;
     color: var(--deep-rose);
@@ -200,10 +213,84 @@ body {
     box-shadow: 0 10px 30px var(--shadow);
 }
 
+/* Hero slider */
+.hero-slider {
+    position: relative;
+    width: 400px;
+    height: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px var(--shadow);
+    outline: none;
+    touch-action: pan-y;
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
+.hero-slider:focus-visible { box-shadow: 0 0 0 3px rgba(196, 133, 138, 0.35), 0 10px 30px var(--shadow); }
+
+.hero-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform .6s ease;
+}
+.hero-track.is-dragging { transition: none; cursor: grabbing; }
+
+.hero-slide { min-width: 100%; height: 100%; display: flex; }
+.hero-slide {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+/* keep .hero-photo for other places (about, gallery), but slider uses background */
+
+.hero-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.65);
+    border: 1px solid rgba(214,154,160,.45);
+    color: var(--deep-rose);
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: background .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+
+.hero-nav:hover { background: rgba(255,255,255,0.85); transform: translateY(-50%) scale(1.06); box-shadow: 0 6px 20px rgba(0,0,0,.15); }
+.hero-nav--prev { left: 10px; }
+.hero-nav--next { right: 10px; }
+
+.hero-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+}
+
+.hero-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.6);
+    border: 1px solid rgba(214,154,160,.45);
+    cursor: pointer;
+    transition: transform .2s ease, background .2s ease;
+}
+
+.hero-dot.is-active { background: var(--dusty-rose); transform: scale(1.2); }
+
+
 /* About photo */
 .about-photo {
     width: 100%;
-    height: 500px;
+    height: 570px;
     object-fit: cover;
     border-radius: 15px;
     display: block;
@@ -249,7 +336,6 @@ section {
 }
 
 .section-header h2 {
-    font-family: 'Playfair Display', serif;
     font-size: 2.5rem;
     color: var(--deep-rose);
     margin-bottom: 15px;
@@ -274,6 +360,9 @@ section {
 /* About Section */
 .about {
     background: var(--white);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .about-content {
@@ -284,7 +373,6 @@ section {
 }
 
 .about-text h3 {
-    font-family: 'Playfair Display', serif;
     font-size: 2rem;
     color: var(--deep-rose);
     margin-bottom: 25px;
@@ -339,6 +427,10 @@ section {
 /* My Way Section */
 .myway {
     background: linear-gradient(135deg, var(--soft-pink) 0%, var(--blush) 100%);
+    background-image: url('img/bg_01.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .approach-cards {
@@ -366,8 +458,11 @@ section {
     margin-bottom: 20px;
 }
 
+.card-icon img {
+    width: 100px;
+}
+
 .approach-card h3 {
-    font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
     color: var(--deep-rose);
     margin-bottom: 15px;
@@ -382,11 +477,14 @@ section {
 /* Services Section */
 .services {
     background: var(--white);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 40px;
 }
 
@@ -404,7 +502,7 @@ section {
 }
 
 .service-image {
-    height: 200px;
+    height: 300px;
     overflow: hidden;
 }
 
@@ -416,10 +514,10 @@ section {
 
 .service-content {
     padding: 30px;
+		background: #fdf5f5;
 }
 
 .service-content h3 {
-    font-family: 'Playfair Display', serif;
     font-size: 1.4rem;
     color: var(--deep-rose);
     margin-bottom: 15px;
@@ -450,6 +548,10 @@ section {
 /* Gallery Section */
 .gallery {
     background: linear-gradient(135deg, var(--blush) 0%, var(--primary-pink) 100%);
+    background-image: url('img/bg_01.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .gallery-grid {
@@ -471,13 +573,16 @@ section {
 
 .gallery-placeholder {
     width: 100%;
-    height: 250px;
+    height: 330px;
     border-radius: 0;
 }
 
 /* Contact Section */
 .contact {
     background: var(--white);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .contact-content {
@@ -514,7 +619,6 @@ section {
 }
 
 .contact-card h3 {
-    font-family: 'Playfair Display', serif;
     color: var(--deep-rose);
     margin-bottom: 10px;
     font-size: 1.3rem;
@@ -554,7 +658,6 @@ section {
 }
 
 .contact-form h3 {
-    font-family: 'Playfair Display', serif;
     color: var(--deep-rose);
     margin-bottom: 30px;
     font-size: 1.8rem;
@@ -572,7 +675,6 @@ section {
     padding: 15px;
     border: 2px solid var(--soft-pink);
     border-radius: 10px;
-    font-family: 'Lato', sans-serif;
     font-size: 1rem;
     background: var(--white);
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
@@ -624,7 +726,6 @@ section {
 }
 
 .footer-logo h3 {
-    font-family: 'Playfair Display', serif;
     font-size: 1.8rem;
     margin-bottom: 5px;
 }
@@ -659,6 +760,11 @@ section {
 }
 
 /* Responsive Design */
+/* Tablet breakpoint: 2 columns */
+@media (max-width: 1024px) {
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
 @media (max-width: 768px) {
     .nav-menu {
         display: none;
@@ -683,6 +789,7 @@ section {
         height: 350px;
         margin-top: 30px;
     }
+    .hero-slider { width: 300px; height: 350px; }
     .about-photo {
         height: 350px;
     }
@@ -741,6 +848,7 @@ section {
 			width: 320px;
 			height: 385px;
     }
+    .hero-slider { width: 320px; height: 385px; }
     .about-photo {
         height: 300px;
     }

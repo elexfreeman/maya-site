@@ -1,0 +1,33 @@
+[STARDATE ${STARDATE}] <CLASS>[<SUBSYSTEM>]: <краткое описание>
+
+# ─────────────────────────────────────────────────────────
+# Starfleet Commit Protocol
+# CLASS (выберите одно):
+#   FIRST_CONTACT        — новый функционал (feat)
+#   SYSTEM_CALIBRATION   — оптимизация/улучшение (perf)
+#   TEMPORAL_ADJUSTMENT  — исправление ошибки (fix)
+#   CODE_RESTRUCTURING   — рефакторинг без изменения поведения (refactor)
+#   DATA_LOG_UPDATE      — документация/комментарии (docs)
+#   CLEANSE_OPERATION    — удаление лишнего/legacy (cleanup)
+#   HOLODECK_SIMULATION  — тесты (test)
+#   TRANSMISSION         — сборка/деплой/публикация (build/deploy)
+#   MERGE_PROTOCOL       — слияние (merge)
+#   RED_ALERT            — срочный фикс (hotfix)
+#   TEMPORAL_RESET       — откат (revert)
+#   STARFLEET_AUTOMATION — авто-коммиты (ci/bot)
+#
+# SUBSYSTEM (опционально): модуль/директория/компонент, напр. [warp-core], [api-gateway], [bridge-ui]
+#
+# Описание (одно предложение): что именно сделано и зачем — цель миссии, не процесс.
+# Дополнения (опционально, через троеточие): ...журнал капитана обновлён. / ...warp field стабилен. / ...база знаний очищена.
+#
+# Примеры:
+# [STARDATE 2025.1018] FIRST_CONTACT[telemetry]: добавлен ingest модуля сигналов... миссия выполнена без потерь.
+# TEMPORAL_ADJUSTMENT[replicator]: устранён сбой циклов подогрева... warp field стабилен.
+# DATA_LOG_UPDATE: обновлён README по конфигурации сенсоров... журнал капитана обновлён.
+#
+# Подсказка: STARDATE можно подставлять хуком (см. ниже).
+#
+# Co-Commander (аналог co-author), опционально:
+# Co-Commander: Имя Фамилия <email@example.com>
+
