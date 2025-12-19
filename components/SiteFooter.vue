@@ -7,11 +7,11 @@
           <p>Акварельные картины с душой</p>
         </div>
         <div class="footer-links">
-          <a href="#about">Обо мне</a>
-          <a href="#myway">Мой подход</a>
-          <a href="#services">Услуги</a>
-          <a href="#gallery">Галерея</a>
-          <a href="#contact">Контакты</a>
+          <a href="/#about">Обо мне</a>
+          <a href="/#myway">Мой подход</a>
+          <a href="/#services">Услуги</a>
+          <a href="/#gallery">Галерея</a>
+          <a href="/#contact">Контакты</a>
         </div>
       </div>
       <div class="footer-bottom">
