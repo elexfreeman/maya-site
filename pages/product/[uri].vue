@@ -51,11 +51,21 @@ useHead({ title: () => (data.value ? `${data.value.caption} — Maya Art` : 'Т�
 
 <style scoped>
 .product-page { background: var(--white); padding-top: 80px; }
-.product-layout { display: grid; gap: 40px; align-items: start; }
-.product-media { width: 100%; aspect-ratio: 4/5; border-radius: 15px; background-size: cover; background-position: center; box-shadow: 0 10px 30px var(--shadow); }
+.product-layout {
+  display: flex;
+  gap: 40px;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.product-media { width: 54%; aspect-ratio: 4/5; border-radius: 15px; background-size: cover; background-position: center; box-shadow: 0 10px 30px var(--shadow); }
 .product-meta { display: flex; flex-direction: column; gap: 20px; }
 @media (max-width: 768px) {
   .product-layout { grid-template-columns: 1fr; }
+}
+.product-page .service-benefits {
+  justify-content: center;
 }
 </style>
 

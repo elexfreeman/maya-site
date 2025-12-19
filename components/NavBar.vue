@@ -3,7 +3,7 @@
     <div class="nav-container">
       <div class="logo">
       <a href="/">
-        <h2>Angel Udachi</h2>
+        <h2>Ангел Удачи</h2>
       </a>
       </div>
       <ul class="nav-menu">

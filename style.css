@@ -78,6 +78,7 @@ a {
 }
 
 .logo h2 {
+    line-height: 2.5rem;
     font-size: 2rem;
     font-weight: 600;
     color: var(--deep-rose);

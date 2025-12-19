@@ -6,7 +6,6 @@
         <div class="section-divider"></div>
         <p>Хотите авторскую картину для дома или в подарок?<br />Напишите в Telegram — помогу подобрать под ваш интерьер.</p>
       </div>
-      <div class="contact-content">
         <div class="contact-info">
           <div class="contact-card">
             <div class="contact-icon">📞</div>
@@ -23,16 +22,6 @@
             </p>
           </div>
         </div>
-        <div class="contact-form">
-          <h3>Купить картину</h3>
-          <div class="placeholder-image contact-placeholder" style="background-image: url(/img/IMG_8886.jpg)">
-            <span>Напишите в Telegram — пришлю каталог и цены</span>
-          </div>
-          <div class="contact-actions">
-            <a class="cta-button Telegram-button" href="https://t.me/angeludachi_bot" target="_blank" rel="noopener noreferrer">Купить в Telegram</a>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 </template>
