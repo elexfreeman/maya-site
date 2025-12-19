@@ -15,8 +15,8 @@
               <span v-for="t in data.tagsList" :key="t">• {{ t }}</span>
             </div>
             <div class="contact-actions">
-              <a class="cta-button whatsapp-button" :href="waLink" target="_blank" rel="noopener noreferrer">
-                Купить в WhatsApp
+              <a class="cta-button Telegram-button" :href="waLink" target="_blank" rel="noopener noreferrer">
+                Купить в Telegram
               </a>
             </div>
           </div>
@@ -44,14 +44,14 @@ const uri = route.params.uri as string
 const { data, error } = await useAsyncData('product', () => $fetch(`/api/products/by-uri/${encodeURIComponent(uri)}`))
 
 const waText = computed(() => `Здравствуйте! Интересует картина “${data.value?.caption || ''}” (${data.value?.description || ''})`)
-const waLink = computed(() => `https://wa.me/?text=${encodeURIComponent(waText.value)}`)
+const waLink = computed(() => `https://t.me/angeludachi_bot?text=${encodeURIComponent(waText.value)}`)
 
 useHead({ title: () => (data.value ? `${data.value.caption} — Maya Art` : 'Товар — Maya Art') })
 </script>
 
 <style scoped>
 .product-page { background: var(--white); padding-top: 80px; }
-.product-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+.product-layout { display: grid; gap: 40px; align-items: start; }
 .product-media { width: 100%; aspect-ratio: 4/5; border-radius: 15px; background-size: cover; background-position: center; box-shadow: 0 10px 30px var(--shadow); }
 .product-meta { display: flex; flex-direction: column; gap: 20px; }
 @media (max-width: 768px) {

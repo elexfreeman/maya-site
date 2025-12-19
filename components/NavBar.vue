@@ -2,7 +2,9 @@
   <nav class="navbar">
     <div class="nav-container">
       <div class="logo">
-        <h2>Maya Art</h2>
+      <a href="/">
+        <h2>Angel Udachi</h2>
+      </a>
       </div>
       <ul class="nav-menu">
         <li><a href="#about">Обо мне</a></li>
@@ -11,7 +13,7 @@
         <li><a href="#gallery">Магазин</a></li>
         <li><a href="#contact">Контакты</a></li>
       </ul>
-      <a class="cta-button whatsapp-button" href="https://wa.me/" target="_blank" rel="noopener noreferrer">Связаться в WhatsApp</a>
+      <a class="cta-button Telegram-button" href="https://t.me/angeludachi_bot" target="_blank" rel="noopener noreferrer">Связаться в Telegram</a>
     </div>
   </nav>
 </template>
