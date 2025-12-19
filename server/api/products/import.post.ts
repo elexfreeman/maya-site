@@ -1,6 +1,7 @@
 import path from 'node:path'
 import fs from 'node:fs/promises'
 import { findProductIdByImgOnly, findProductIdByUriOnly, insertProduct } from '~/system/products'
+import { requireAdminSession } from '~/server/utils/adminSession'
 
 function normalizeTag(name: string): string {
   return name.trim().replace(/[_-]+/g, ' ')
@@ -50,6 +51,7 @@ async function* walk(dir: string): AsyncGenerator<string> {
 const IMAGE_EXT = new Set(['.jpg', '.jpeg', '.png', '.webp', '.gif'])
 
 export default defineEventHandler(async (event) => {
+  requireAdminSession(event)
   const baseDir = path.join(process.cwd(), 'public', 'products')
   const results: { inserted: number; skipped: number; items: any[] } = { inserted: 0, skipped: 0, items: [] }
   try {

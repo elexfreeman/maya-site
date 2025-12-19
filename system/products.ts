@@ -79,6 +79,14 @@ export type NewProduct = {
   uri: string
 }
 
+export type ProductPayload = {
+  caption: string
+  description: string
+  tags: string | null
+  img: string
+  uri: string
+}
+
 export async function findProductIdByUriOrImg(uri: string, img: string): Promise<number | null> {
   const rows = await query<RowDataPacket[]>(
     'SELECT id FROM products WHERE uri = ? OR img = ? LIMIT 1',
@@ -116,4 +124,21 @@ export async function insertProduct(p: NewProduct): Promise<number> {
   )
   // mysql2 returns OkPacket with insertId
   return Number((rows as any).insertId || 0)
+}
+
+export async function findConflictingProductId(id: number, uri: string, img: string): Promise<number | null> {
+  const rows = await query<RowDataPacket[]>(
+    'SELECT id FROM products WHERE (uri = ? OR img = ?) AND id != ? LIMIT 1',
+    [uri, img, id]
+  )
+  if (!rows || rows.length === 0) return null
+  // @ts-ignore
+  return Number(rows[0].id)
+}
+
+export async function updateProduct(id: number, p: ProductPayload): Promise<void> {
+  await query(
+    'UPDATE products SET caption = ?, description = ?, tags = ?, img = ?, uri = ? WHERE id = ?',
+    [p.caption, p.description, p.tags, p.img, p.uri, id]
+  )
 }
