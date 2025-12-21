@@ -1,5 +1,8 @@
 <template>
   <section class="hero">
+    <video class="hero-video" autoplay muted loop playsinline preload="auto">
+      <source src="/video/flowers-01.mp4" type="video/mp4">
+    </video>
     <div class="container">
     <div class="about-content">
        <div class="hero-content">
