@@ -412,7 +412,6 @@ a {
     object-fit: cover;
     border-radius: 15px;
     display: block;
-    box-shadow: 0 10px 30px var(--shadow);
 }
 
 /* Placeholder Images */
@@ -1130,4 +1129,9 @@ section {
     .Telegram-button {
         display: none;
     }
+}
+
+.container-float {
+    width: 100%;
+    padding: 20px;
 }
