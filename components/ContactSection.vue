@@ -9,7 +9,7 @@
         <div class="contact-info">
           <div class="contact-card">
             <div class="contact-icon">
-              <img class="contact-icon-img" src="/icons/icon-phone.jpg" />
+              <img class="contact-icon-img" src="/icons/icon-call-me.jpg" />
             </div>
             <h3>Как связаться со мной</h3>
             <p>+7 999 158 8405</p>
@@ -17,7 +17,7 @@
           </div>
           <div class="contact-card">
             <div class="contact-icon">
-              <img class="contact-icon-img" src="/icons/icon-work.jpg" />
+              <img class="contact-icon-img" src="/icons/fl-03.jpg" />
             </div>
             <h3>Часы работы</h3>
             <p>

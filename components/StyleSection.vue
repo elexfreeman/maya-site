@@ -9,7 +9,7 @@
         <div class="approach-cards">
           <div class="approach-card">
             <div class="card-icon">
-              <img src="/icons/icon001.jpg" />
+              <img src="/icons/fl-01.jpg" />
             </div>
             <h3>Живой акварельный свет</h3>
             <p>Работаю прозрачными слоями, сохраняю белизну бумаги и естественную текучесть воды — так картины дышат
@@ -24,7 +24,7 @@
           </div>
           <div class="approach-card">
             <div class="card-icon">
-              <img src="/icons/icon006.jpg" />
+              <img src="/icons/fl-02.jpg" />
             </div>
             <h3>Теплота и мягкость</h3>
             <p>Стремлюсь к спокойной эстетике и тёплым оттенкам — картины легко вписываются в дом и создают уют.</p>
